@@ -39,7 +39,7 @@
     self.lb.myLeft = 0;
 
     [self.layout addSubview:self.lb];
-
+    
 }
 
 - (void)awakeFromNib {

@@ -29,8 +29,8 @@
 		A96F84FC2652133D009CE67C /* LoginLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F84FB2652133D009CE67C /* LoginLogic.m */; };
 		A96F850D26524DB2009CE67C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96F850C26524DB2009CE67C /* Profile.storyboard */; };
 		A96F851326524DCB009CE67C /* MyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F851226524DCB009CE67C /* MyVC.m */; };
-		A96F852626525244009CE67C /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F852526525244009CE67C /* BaseTableViewCell.m */; };
 		A96F852C265253BA009CE67C /* CSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F852B265253BA009CE67C /* CSCell.m */; };
+		A96F853F26538C49009CE67C /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F853E26538C49009CE67C /* LoginModel.m */; };
 		EB16C934CB52E9F2502551A5 /* Pods_ios_base_pj_ios_base_pjUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF5E6C9DF2C690355986089 /* Pods_ios_base_pj_ios_base_pjUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,10 +97,10 @@
 		A96F850C26524DB2009CE67C /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		A96F851126524DCB009CE67C /* MyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVC.h; sourceTree = "<group>"; };
 		A96F851226524DCB009CE67C /* MyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVC.m; sourceTree = "<group>"; };
-		A96F852426525244009CE67C /* BaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
-		A96F852526525244009CE67C /* BaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		A96F852A265253BA009CE67C /* CSCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSCell.h; sourceTree = "<group>"; };
 		A96F852B265253BA009CE67C /* CSCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSCell.m; sourceTree = "<group>"; };
+		A96F853D26538C49009CE67C /* LoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		A96F853E26538C49009CE67C /* LoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		B556EC133907EEA32BDD42B6 /* Pods_ios_base_pjTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_base_pjTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D627C1C403503192A3B4863F /* Pods-ios-base-pj-ios-base-pjUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios-base-pj-ios-base-pjUITests.debug.xcconfig"; path = "Target Support Files/Pods-ios-base-pj-ios-base-pjUITests/Pods-ios-base-pj-ios-base-pjUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E4248B327F6C428E3FDE509A /* Pods_ios_base_pj.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_base_pj.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -278,6 +278,8 @@
 				A96F84CA26520AE5009CE67C /* LoginVC.m */,
 				A96F84FA2652133D009CE67C /* LoginLogic.h */,
 				A96F84FB2652133D009CE67C /* LoginLogic.m */,
+				A96F853D26538C49009CE67C /* LoginModel.h */,
+				A96F853E26538C49009CE67C /* LoginModel.m */,
 			);
 			path = LoginReg;
 			sourceTree = "<group>";
@@ -307,8 +309,6 @@
 				A96F84EF265211BC009CE67C /* BaseViewController.m */,
 				A96F84F4265211FE009CE67C /* BaseLogic.h */,
 				A96F84F5265211FE009CE67C /* BaseLogic.m */,
-				A96F852426525244009CE67C /* BaseTableViewCell.h */,
-				A96F852526525244009CE67C /* BaseTableViewCell.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -578,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96F851326524DCB009CE67C /* MyVC.m in Sources */,
+				A96F853F26538C49009CE67C /* LoginModel.m in Sources */,
 				A96F8434264E6326009CE67C /* UploadFormParam.m in Sources */,
 				A96F845B264E68A8009CE67C /* MBProgressHUD+Ext.m in Sources */,
 				A96F84F0265211BC009CE67C /* BaseViewController.m in Sources */,
@@ -590,7 +591,6 @@
 				A96F83C7264E1B0A009CE67C /* AppDelegate.m in Sources */,
 				A96F84CB26520AE5009CE67C /* LoginVC.m in Sources */,
 				A96F84E72652119E009CE67C /* BaseModel.m in Sources */,
-				A96F852626525244009CE67C /* BaseTableViewCell.m in Sources */,
 				A96F83D8264E1B0E009CE67C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -32,14 +32,18 @@
     dispatch_after(delay, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         dispatch_sync(dispatch_get_main_queue(), ^{
             self.string = @"abc\nbdfksj\nsdflkj\nsdlfkjl\nsdlfkjk";
-            [self.tableView reloadData];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath,nil] withRowAnimation:UITableViewRowAnimationFade];
         });
     });
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CSCell *cell = [CSCell cellWithTableView:self.tableView];
-    cell.lb.text = self.string;
+    cell.lb.text = @"abc";
+    if (indexPath.row == 0) {
+        cell.lb.text = self.string;
+    }
     return cell;
 }
 
@@ -47,8 +51,7 @@
     return 5;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return UITableViewAutomaticDimension;
 }
 

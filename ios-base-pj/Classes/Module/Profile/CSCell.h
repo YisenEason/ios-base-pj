@@ -5,11 +5,11 @@
 //  Created by easonyi on 17/5/2021.
 //
 
-#import "BaseTableViewCell.h"
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CSCell : BaseTableViewCell
+@interface CSCell : UITableViewCell
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
 

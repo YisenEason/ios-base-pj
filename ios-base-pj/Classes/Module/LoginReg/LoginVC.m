@@ -48,26 +48,21 @@
     [frameLayout addSubview:self.usernameLb];
     
     self.loginBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [self.loginBtn setTitle:@"btn aaaaa" forState:UIControlStateNormal];
+    [self.loginBtn setTitle:@"btn" forState:UIControlStateNormal];
     self.loginBtn.mySize = CGSizeMake(MyLayoutSize.wrap, MyLayoutSize.wrap);
     self.loginBtn.topPos.equalTo(self.usernameLb.bottomPos).offset(0);
     self.loginBtn.myLeft = 0;
-    self.loginBtn.backgroundColor = [UIColor blueColor];
     [self.loginBtn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
     [frameLayout addSubview:self.loginBtn];
     
     [self.view addSubview:frameLayout];
-    
-    [frameLayout setEndLayoutBlock:^{
-        NSLog(@"%f", frameLayout.frame.size.height);
-    }];
     
 }
 
 - (void)kvo {
     
     self.KVOController = [FBKVOController controllerWithObserver:self];
-    [self.KVOController observe:self.logic keyPaths:@[@"username", @"password"] options:NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
+    [self.KVOController observe:self.logic keyPaths:@[@"username", @"password", @"model"] options:NSKeyValueObservingOptionNew block:^(id  _Nullable observer, id  _Nonnull object, NSDictionary<NSString *,id> * _Nonnull change) {
         if ([change[@"FBKVONotificationKeyPathKey"] isEqualToString: @"username"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.usernameLb.text = self.logic.username;
@@ -80,14 +75,14 @@
     }];
 }
 
-- (IBAction)login:(id)sender {
+- (void)login:(id)sender {
     [MBProgressHUD showLoadToView:self.view];
     WeakSelf(self)
     [self.logic login:^{
         NSLog(@"login");
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:weakself.view];
-//            [self.navigationController pushViewController:[MyVC new] animated:YES];
+            [self.navigationController pushViewController:[MyVC new] animated:YES];
         });
     }];
 }
